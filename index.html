@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DakshinDelights Catering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="order">
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Catering Ordering</p>
+        <h1>Build your meal order in minutes.</h1>
+        <p class="hero-text">
+          Select breakfast, lunch, and curry items, enter your details, and submit the order.
+          Your total updates instantly.
+        </p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel menu-panel">
+        <div class="section-head">
+          <p class="section-kicker">Menu</p>
+          <h2>Choose your items</h2>
+        </div>
+        <div id="menu-grid" class="menu-grid"></div>
+      </section>
+
+      <aside class="panel order-panel">
+        <div class="section-head">
+          <p class="section-kicker">Order</p>
+          <h2>Customer details</h2>
+        </div>
+
+        <form id="order-form" class="order-form">
+          <label>
+            Name
+            <input id="customer-name" name="name" type="text" placeholder="Customer name" required>
+          </label>
+
+          <label>
+            Phone
+            <input id="customer-phone" name="phone" type="tel" placeholder="Phone number" required>
+          </label>
+
+          <label>
+            Address
+            <textarea id="customer-address" name="address" rows="3" placeholder="Delivery address" required></textarea>
+          </label>
+
+          <label>
+            Postcode
+            <input id="customer-postcode" name="postcode" type="text" placeholder="Postcode" required>
+          </label>
+
+          <label>
+            Event date
+            <input id="event-date" name="eventDate" type="date" required>
+          </label>
+
+          <label>
+            Notes
+            <textarea id="customer-notes" name="notes" rows="3" placeholder="Extra requests"></textarea>
+          </label>
+
+          <div class="summary-box">
+            <div class="summary-line">
+              <span>Selected items</span>
+              <strong id="selected-count">0</strong>
+            </div>
+            <div class="summary-line total-line">
+              <span>Total price</span>
+              <strong id="order-total">Rs 0</strong>
+            </div>
+          </div>
+
+          <div id="order-items-preview" class="order-items-preview"></div>
+
+          <button class="primary-button" type="submit">Submit Order</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

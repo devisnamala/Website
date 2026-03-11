@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>SpiceRoute Catering Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="admin">
+  <div class="page-shell">
+    <header class="hero compact-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Admin Panel</p>
+        <h1>Review local browser orders.</h1>
+        <p class="hero-text">
+          This page shows orders saved in local storage from this browser.
+        </p>
+      </div>
+      <a class="admin-link" href="index.html">Back to Order Page</a>
+    </header>
+
+    <main class="admin-layout">
+      <section id="login-panel" class="panel admin-auth-panel">
+        <div class="section-head">
+          <p class="section-kicker">Login</p>
+          <h2>Administrator access</h2>
+        </div>
+
+        <form id="admin-login-form" class="order-form">
+          <label>
+            Username
+            <input id="admin-username" type="text" placeholder="admin" required>
+          </label>
+
+          <label>
+            Password
+            <input id="admin-password" type="password" placeholder="Enter password" required>
+          </label>
+
+          <button class="primary-button" type="submit">Login</button>
+          <p class="helper-text">Default login: <strong>admin</strong> / <strong>admin123</strong></p>
+          <p id="login-status" class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="dashboard-panel" class="panel dashboard-panel hidden">
+        <div class="dashboard-head">
+          <div>
+            <p class="section-kicker">Orders</p>
+            <h2>Saved browser orders</h2>
+          </div>
+          <button id="logout-button" class="secondary-button" type="button">Logout</button>
+        </div>
+
+        <div class="summary-box admin-summary">
+          <div class="summary-line">
+            <span>Total orders</span>
+            <strong id="admin-order-count">0</strong>
+          </div>
+        </div>
+
+        <div id="orders-list" class="orders-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
