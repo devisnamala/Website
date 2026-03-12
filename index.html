@@ -20,6 +20,7 @@
           Your total updates instantly.
         </p>
       </div>
+      <a class="admin-link" href="admin.html">Admin Login</a>
     </header>
 
     <main class="layout">
@@ -66,6 +67,15 @@
           <label>
             Notes
             <textarea id="customer-notes" name="notes" rows="3" placeholder="Extra requests"></textarea>
+          </label>
+
+          <label>
+            Order confirmation status
+            <select id="order-status" name="status" class="order-status-select">
+              <option value="Tentative">Tentative</option>
+              <option value="Yet to be confirmed">Yet to be confirmed</option>
+              <option value="Confirmed">Confirmed</option>
+            </select>
           </label>
 
           <div class="summary-box">

@@ -56,14 +56,57 @@
           <button id="logout-button" class="secondary-button" type="button">Logout</button>
         </div>
 
-        <div class="summary-box admin-summary">
-          <div class="summary-line">
-            <span>Total orders</span>
-            <strong id="admin-order-count">0</strong>
-          </div>
+        <div class="admin-tabs">
+          <button class="admin-tab-button active" type="button" data-admin-tab="summary">Summary</button>
+          <button class="admin-tab-button" type="button" data-admin-tab="menu">Menu Control</button>
         </div>
 
-        <div id="orders-list" class="orders-list"></div>
+        <section id="admin-tab-summary" class="admin-tab-panel">
+          <div class="summary-box admin-summary">
+            <div class="summary-line">
+              <span>Total orders</span>
+              <strong id="admin-order-count">0</strong>
+            </div>
+          </div>
+
+          <div id="orders-list" class="orders-list"></div>
+        </section>
+
+        <section id="admin-tab-menu" class="admin-tab-panel hidden">
+          <section class="admin-menu-section">
+            <div class="section-head">
+              <p class="section-kicker">Menu Control</p>
+              <h2>Add or remove menu items</h2>
+            </div>
+
+            <form id="menu-item-form" class="order-form admin-menu-form">
+              <input id="menu-item-id" name="id" type="hidden">
+
+              <label>
+                Item name
+                <input id="menu-item-name" name="name" type="text" placeholder="Paneer Curry" required>
+              </label>
+
+              <label>
+                Price
+                <input id="menu-item-price" name="price" type="number" min="1" step="1" placeholder="120" required>
+              </label>
+
+              <label>
+                Description
+                <textarea id="menu-item-description" name="description" rows="3" placeholder="Describe the item" required></textarea>
+              </label>
+
+              <div class="admin-form-actions">
+                <button id="menu-item-submit" class="primary-button" type="submit">Add Menu Item</button>
+                <button id="menu-item-cancel" class="secondary-button hidden" type="button">Cancel Edit</button>
+              </div>
+              <p id="menu-item-status" class="form-status" aria-live="polite"></p>
+            </form>
+
+            <div id="admin-menu-list" class="admin-menu-list"></div>
+          </section>
+        </section>
       </section>
     </main>
   </div>
